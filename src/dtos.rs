@@ -89,3 +89,10 @@ pub struct UserResponseDto {
     pub status: String,
     pub data: UserData,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserListResponseDto {
+    pub status: String,
+    pub users: Vec<FilterUserDto>,
+    pub results: i64,
+}
