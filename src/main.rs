@@ -26,4 +26,6 @@ async fn main() {
     tracing_subscriber::fmt()
     .with_max_level(LevelFilter::DEBUG)
     .init();
+
+    dotenv().ok();
 }
