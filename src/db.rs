@@ -236,4 +236,24 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
+
+    async fn verifed_token(
+        &self,
+        token: &str,
+    ) -> Result<(), sqlx::Error> {
+        let _ =sqlx::query!(
+            r#"
+            UPDATE users
+            SET verified = true, 
+                updated_at = Now(),
+                verification_token = NULL,
+                token_expires_at = NULL
+            WHERE verification_token = $1
+            "#,
+            token
+        ).execute(&self.pool)
+       .await;
+
+        Ok(())
+    }
 }
