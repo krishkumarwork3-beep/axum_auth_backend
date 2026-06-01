@@ -96,3 +96,9 @@ pub struct UserListResponseDto {
     pub users: Vec<FilterUserDto>,
     pub results: i64,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserLoginResponseDto {
+    pub status: String,
+    pub token: String,
+}
