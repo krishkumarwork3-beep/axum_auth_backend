@@ -61,4 +61,9 @@ pub trait UserExt {
         user_id: Uuid,
         password: String,
     ) -> Result<User, sqlx::Error>;
+
+     async fn verifed_token(
+        &self,
+        token: &str,
+    ) -> Result<(), sqlx::Error>;
 }
