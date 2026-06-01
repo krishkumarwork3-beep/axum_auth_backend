@@ -174,4 +174,24 @@ impl UserExt for DBClient {
         Ok(count.unwrap_or(0))
     }
 
+    async fn update_user_name<T: Into<String> + Send>(
+        &self,
+        user_id: Uuid,
+        new_name: T
+    ) -> Result<User, sqlx::Error> {
+        let user = sqlx::query_as!(
+            User,
+            r#"
+            UPDATE users
+            SET name = $1, updated_at = Now()
+            WHERE id = $2
+            RETURNING id, name, email, password, verified, created_at, updated_at, verification_token, token_expires_at, role as "role: UserRole"
+            "#,
+            new_name.into(),
+            user_id
+        ).fetch_one(&self.pool)
+        .await?;
+
+        Ok(user)
+    }
 }
