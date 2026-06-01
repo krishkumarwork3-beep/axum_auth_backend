@@ -32,4 +32,13 @@ pub trait UserExt {
         page: u32,
         limit: usize,
     ) -> Result<Vec<User>, sqlx::Error>;
+
+    async fn save_user<T: Into<String> + Send>(
+        &self,
+        name: T,
+        email: T,
+        password: T,
+        verification_token: T,
+        token_expires_at: DateTime<Utc>,
+    ) -> Result<User, sqlx::Error>;
 }
