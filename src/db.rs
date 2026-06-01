@@ -163,4 +163,15 @@ impl UserExt for DBClient {
         .await?;
         Ok(user)
     }
+
+    async fn get_user_count(&self) -> Result<i64, sqlx::Error> {
+        let count = sqlx::query_scalar!(
+            r#"SELECT COUNT(*) FROM users"#
+        )
+       .fetch_one(&self.pool)
+       .await?;
+
+        Ok(count.unwrap_or(0))
+    }
+
 }
