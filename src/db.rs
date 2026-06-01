@@ -26,4 +26,10 @@ pub trait UserExt {
         email: Option<&str>,
         token: Option<&str>,
     ) -> Result<Option<User>, sqlx::Error>;
+
+    async fn get_users(
+        &self,
+        page: u32,
+        limit: usize,
+    ) -> Result<Vec<User>, sqlx::Error>;
 }
