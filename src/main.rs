@@ -15,6 +15,12 @@ use sqlx::postgres::PgPoolOptions;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber::filter::LevelFilter;
 
+#[derive(Debug, Clone)]
+pub struct AppState {
+    pub env: Config,
+    pub db_client: DBClient,
+}
+
 fn main() {
     println!("Hello, world!");
 }
