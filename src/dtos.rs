@@ -78,3 +78,8 @@ impl FilterUserDto {
         user.iter().map(FilterUserDto::filter_user).collect()
     }
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserData {
+    pub user: FilterUserDto,
+}
