@@ -66,4 +66,11 @@ pub trait UserExt {
         &self,
         token: &str,
     ) -> Result<(), sqlx::Error>;
+
+     async fn add_verifed_token(
+        &self,
+        user_id: Uuid,
+        token: &str,
+        expires_at: DateTime<Utc>,
+    ) -> Result<(), sqlx::Error>;
 }
