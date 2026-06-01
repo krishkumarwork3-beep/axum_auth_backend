@@ -74,3 +74,8 @@ pub trait UserExt {
         expires_at: DateTime<Utc>,
     ) -> Result<(), sqlx::Error>;
 }
+
+#[async_trait]
+impl UserExt for DBClient {
+      
+}
