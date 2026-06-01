@@ -19,5 +19,11 @@ impl DBClient {
 
 #[async_trait]
 pub trait UserExt {
-    
+    async fn get_user(
+        &self,
+        user_id: Option<Uuid>,
+        name: Option<&str>,
+        email: Option<&str>,
+        token: Option<&str>,
+    ) -> Result<Option<User>, sqlx::Error>;
 }
