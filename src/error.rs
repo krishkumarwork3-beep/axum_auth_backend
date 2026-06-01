@@ -97,4 +97,12 @@ impl HttpError {
             status: StatusCode::UNAUTHORIZED,
         }
     }
+    pub fn into_http_response(self) -> Response {
+        let json_response = Json(ErrorResponse {
+            status: "fail".to_string(),
+            message: self.message.clone(),
+        });
+
+        (self.status, json_response).into_response()
+    }
 }
