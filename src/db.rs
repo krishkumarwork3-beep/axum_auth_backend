@@ -5,3 +5,8 @@ use sqlx::{Pool, Postgres};
 use uuid::Uuid;
 
 use crate::models::{User, UserRole};
+
+#[derive(Debug, Clone)]
+pub struct DBClient {
+    pool: Pool<Postgres>,
+}
