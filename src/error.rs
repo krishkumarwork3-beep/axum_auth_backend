@@ -6,3 +6,9 @@ use axum::{
 };
 use serde::{Deserialize, Serialize};
 use std::fmt;
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ErrorResponse {
+    pub status: String,
+    pub message: String,
+}
