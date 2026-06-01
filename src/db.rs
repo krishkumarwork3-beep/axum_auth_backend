@@ -41,4 +41,6 @@ pub trait UserExt {
         verification_token: T,
         token_expires_at: DateTime<Utc>,
     ) -> Result<User, sqlx::Error>;
+
+    async fn get_user_count(&self) -> Result<i64, sqlx::Error>;
 }
