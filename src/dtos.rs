@@ -60,3 +60,21 @@ pub struct FilterUserDto {
     #[serde(rename = "updatedAt")]
     pub updated_at: DateTime<Utc>,
 }
+
+impl FilterUserDto {
+    pub fn filter_user(user: &User) -> Self {
+        FilterUserDto {
+            id: user.id.to_string(),
+            name: user.name.to_owned(),
+            email: user.email.to_owned(),
+            verified: user.verified,
+            role: user.role.to_str().to_string(),
+            created_at: user.created_at.unwrap(),
+            updated_at: user.updated_at.unwrap(),
+        }
+    }
+
+    pub fn filter_users(user: &[User]) -> Vec<FilterUserDto> {
+        user.iter().map(FilterUserDto::filter_user).collect()
+    }
+}
