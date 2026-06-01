@@ -49,4 +49,11 @@ pub trait UserExt {
         user_id: Uuid,
         name: T,
     ) -> Result<User, sqlx::Error>;
+
+    async fn update_user_role(
+        &self,
+        user_id: Uuid,
+        role: UserRole,
+    ) -> Result<User, sqlx::Error>;
+
 }
