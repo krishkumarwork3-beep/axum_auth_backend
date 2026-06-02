@@ -36,4 +36,8 @@ pub fn compare(password: &str, hashed_password: &str) -> Result<bool, ErrorMessa
     if password.is_empty() {
         return Err(ErrorMessage::EmptyPassword);
     }
+
+    if password.len() > MAX_PASSWORD_LENGTH {
+        return Err(ErrorMessage::ExceededMaxPasswordLength(MAX_PASSWORD_LENGTH));
+    }
 }
