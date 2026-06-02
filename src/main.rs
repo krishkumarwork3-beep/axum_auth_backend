@@ -7,7 +7,7 @@ mod db;
 
 use std::sync::Arc;
 
-use axum::http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method};
+use axum::{http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method}, Extension, Router};
 use config::Config;
 use db::DBClient;
 use dotenv::dotenv;
@@ -57,5 +57,5 @@ async fn main() {
         env: config.clone(),
         db_client,
     };
-    
+    let app: Router=Router::new().layer(Extension(app_state)).layer(cors.clone());
 }
