@@ -28,4 +28,6 @@ pub fn create_token(
      if user_id.is_empty() {
         return Err(jsonwebtoken::errors::ErrorKind::InvalidSubject.into());
     }
+
+    let now = Utc::now();
 }
