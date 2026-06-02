@@ -65,4 +65,6 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", &config.port))
     .await
     .unwrap();
+
+    axum::serve(listener, app).await.unwrap();
 }
