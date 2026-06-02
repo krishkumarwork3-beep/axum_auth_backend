@@ -38,4 +38,9 @@ pub fn create_token(
         exp,
     };
 
+    encode(
+        &Header::default(), 
+        &claims, 
+        &EncodingKey::from_secret(secret)
+    )
 }
