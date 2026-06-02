@@ -31,3 +31,7 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
     
     Ok(hashed_password)
 }
+
+pub fn compare(password: &str, hashed_password: &str) -> Result<bool, ErrorMessage> {
+    
+}
