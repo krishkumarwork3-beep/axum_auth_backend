@@ -28,4 +28,6 @@ async fn main() {
     .init();
 
     dotenv().ok();
+
+    let config = Config::init();
 }
