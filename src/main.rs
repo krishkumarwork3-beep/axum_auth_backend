@@ -45,4 +45,10 @@ async fn main() {
             std::process::exit(1);
         }
     };
+
+    let cors = CorsLayer::new()
+        .allow_origin("http://localhost:3000".parse::<HeaderValue>().unwrap())
+        .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE])
+        .allow_credentials(true)
+        .allow_methods([Method::GET, Method::POST,Method::PUT]);
 }
