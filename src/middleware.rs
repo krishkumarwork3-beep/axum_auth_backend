@@ -45,4 +45,7 @@ pub async fn auth(
                         }
                     })  
             });
+    let token = cookies.ok_or_else(|| {
+        HttpError::unauthorized(ErrorMessage::TokenNotProvided.to_string())
+    })?;
 }
