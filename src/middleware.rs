@@ -48,4 +48,9 @@ pub async fn auth(
     let token = cookies.ok_or_else(|| {
         HttpError::unauthorized(ErrorMessage::TokenNotProvided.to_string())
     })?;
+
+    let token_details = 
+        match token::decode_token(token, app_state.env.jwt_secret.as_bytes()) {
+            Ok(token_details) => token_details,
+        };
 }
