@@ -95,4 +95,6 @@ pub async fn role_check(
      if !required_roles.contains(&user.user.role) {
         return Err(HttpError::new(ErrorMessage::PermissionDenied.to_string(), StatusCode::FORBIDDEN));
     }
+
+    Ok(next.run(req).await)
 }
