@@ -76,5 +76,14 @@ pub async fn auth(
     });
 
      Ok(next.run(req).await)
-     
+
+}
+
+pub async fn role_check(
+    Extension(_app_state): Extension<Arc<AppState>>,
+    req: Request,
+    next: Next,
+    required_roles: Vec<UserRole>,
+) -> Result<impl IntoResponse, HttpError> {
+    
 }
