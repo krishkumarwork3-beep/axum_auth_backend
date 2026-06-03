@@ -70,4 +70,8 @@ pub async fn auth(
         let user = user.ok_or_else(|| {
         HttpError::unauthorized(ErrorMessage::UserNoLongerExist.to_string())
     })?;
+
+    req.extensions_mut().insert(JWTAuthMiddeware {
+        user: user.clone(),
+    });
 }
