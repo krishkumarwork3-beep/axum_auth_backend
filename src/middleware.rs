@@ -74,4 +74,7 @@ pub async fn auth(
     req.extensions_mut().insert(JWTAuthMiddeware {
         user: user.clone(),
     });
+
+     Ok(next.run(req).await)
+     
 }
