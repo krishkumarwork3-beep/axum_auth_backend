@@ -49,5 +49,9 @@ pub fn decode_token<T: Into<String>>(
     token: T,
     secret: &[u8]
 ) -> Result<String, HttpError> {
-    
+    let decode = decode::<TokenClaims>(
+    &token.into(),
+    &DecodingKey::from_secret(secret),
+    &Validation::new(Algorithm::HS256),
+);
 }
