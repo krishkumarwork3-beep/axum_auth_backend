@@ -18,3 +18,8 @@ use crate::{
     utils::token,
     AppState
 };
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct JWTAuthMiddeware {
+    pub user: User,
+}
