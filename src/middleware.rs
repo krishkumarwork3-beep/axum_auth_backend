@@ -66,4 +66,8 @@ pub async fn auth(
             .map_err(|_| {
                 HttpError::unauthorized(ErrorMessage::UserNoLongerExist.to_string())
             })?;
+
+        let user = user.ok_or_else(|| {
+        HttpError::unauthorized(ErrorMessage::UserNoLongerExist.to_string())
+    })?;
 }
