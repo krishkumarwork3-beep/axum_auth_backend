@@ -56,4 +56,9 @@ pub async fn auth(
                 return Err(HttpError::unauthorized(ErrorMessage::InvalidToken.to_string()));
             }
         };
+        let user_id = uuid::Uuid::parse_str(&token_details.to_string())
+            .map_err(|_| {
+                HttpError::unauthorized(ErrorMessage::InvalidToken.to_string())
+            })?;
+
 }
