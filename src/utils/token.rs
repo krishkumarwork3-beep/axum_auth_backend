@@ -54,4 +54,8 @@ pub fn decode_token<T: Into<String>>(
     &DecodingKey::from_secret(secret),
     &Validation::new(Algorithm::HS256),
 );
+ match decode {
+        Ok(token) => Ok(token.claims.sub),
+        Err(_) => Err(HttpError::new(ErrorMessage::InvalidToken.to_string(), StatusCode::UNAUTHORIZED))
+    }
 }
