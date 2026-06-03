@@ -88,6 +88,9 @@ pub async fn role_check(
     let user = req
             .extensions()
             .get::<JWTAuthMiddeware>()
+            .ok_or_else(|| {
+                HttpError::unauthorized(ErrorMessage::UserNotAuthenticated.to_string())
+            })?;
             
     
 }
