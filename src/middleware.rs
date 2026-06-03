@@ -85,5 +85,9 @@ pub async fn role_check(
     next: Next,
     required_roles: Vec<UserRole>,
 ) -> Result<impl IntoResponse, HttpError> {
+    let user = req
+            .extensions()
+            .get::<JWTAuthMiddeware>()
+            
     
 }
