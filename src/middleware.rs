@@ -91,6 +91,7 @@ pub async fn role_check(
             .ok_or_else(|| {
                 HttpError::unauthorized(ErrorMessage::UserNotAuthenticated.to_string())
             })?;
-            
     
+     if !required_roles.contains(&user.user.role) {
+    }
 }
