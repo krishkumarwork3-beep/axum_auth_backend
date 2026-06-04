@@ -184,4 +184,6 @@ pub async fn forgot_password(
     let result = app_state.db_client
             .get_user(None, None, Some(&body.email), None)
             .await
+            .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
