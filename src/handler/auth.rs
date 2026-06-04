@@ -15,3 +15,10 @@ pub fn auth_handler() -> Router {
         .route("/forgot-password", post(forgot_password))
         .route("/reset-password", post(reset_password))
 }
+
+pub async fn register(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<RegisterUserDto>
+) -> Result<impl IntoResponse, HttpError> {
+
+}
