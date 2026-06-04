@@ -170,4 +170,6 @@ pub async fn verify_email(
     let mut response = redirect.into_response();
 
     response.headers_mut().extend(headers);
+
+    Ok(response)
 }
