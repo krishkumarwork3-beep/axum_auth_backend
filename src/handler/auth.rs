@@ -231,6 +231,8 @@ pub async fn reset_password(
     let user = result.ok_or(HttpError::bad_request("Invalid or expired token".to_string()))?;
 
     if let Some(expires_at) = user.token_expires_at {
-        
+        if Utc::now() > expires_at {
+            return Err(HttpError::bad_request("Verification token has expired".to_string()))?;
+        }
     }
 }
