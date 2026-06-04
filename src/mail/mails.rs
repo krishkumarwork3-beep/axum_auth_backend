@@ -8,4 +8,8 @@ pub async fn send_verification_email(
     let template_path = "src/mail/templates/Verification-email.html";
     let base_url = "http://localhost:8000/api/auth/verify";
     let verification_link = create_verification_link(base_url, token);
+    let placeholders = vec![
+        ("{{username}}".to_string(), username.to_string()),
+        ("{{verification_link}}".to_string(), verification_link)
+    ];
 }
