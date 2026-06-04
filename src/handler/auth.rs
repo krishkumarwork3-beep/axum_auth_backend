@@ -199,4 +199,6 @@ pub async fn forgot_password(
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
     let reset_link = format!("http://localhost:5173/reset-password?token={}", &verification_token);
+
+    let email_sent = send_forgot_password_email(&user.email, &reset_link, &user.name).await;
 }
