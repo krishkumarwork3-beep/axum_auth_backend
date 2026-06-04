@@ -94,4 +94,6 @@ pub async fn login(
             status: "success".to_string(),
             token,
         });
+
+     let mut headers = HeaderMap::new();
 }
