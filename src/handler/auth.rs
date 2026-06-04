@@ -155,4 +155,6 @@ pub async fn verify_email(
         .max_age(cookie_duration)
         .http_only(true)
         .build();
+
+    let mut headers = HeaderMap::new();
 }
