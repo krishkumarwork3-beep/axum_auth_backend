@@ -246,4 +246,6 @@ pub async fn reset_password(
     app_state.db_client
         .update_user_password(user_id.clone(), hash_password)
         .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
