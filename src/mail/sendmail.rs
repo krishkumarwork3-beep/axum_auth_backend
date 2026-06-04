@@ -17,4 +17,6 @@ pub async fn send_email(
     let smtp_server = env::var("SMTP_SERVER")?;
     let smtp_port: u16 = env::var("SMTP_PORT")?.parse()?;
 
+    let mut html_template = fs::read_to_string(template_path)?;
+
 }
