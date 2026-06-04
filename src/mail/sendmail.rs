@@ -32,4 +32,5 @@ pub async fn send_email(
             .header(header::ContentType::TEXT_HTML)
             .body(html_template)
         )?;
+    let creds = Credentials::new(smtp_username.clone(), smtp_password.clone());
 }
