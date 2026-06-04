@@ -25,4 +25,7 @@ pub async fn register(
     let verification_token = uuid::Uuid::new_v4().to_string();
     let expires_at = Utc::now() + Duration::hours(24);
 
+    let hash_password = password::hash(&body.password)
+            .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
