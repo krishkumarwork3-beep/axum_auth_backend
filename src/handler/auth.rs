@@ -141,4 +141,8 @@ pub async fn verify_email(
     if let Err(e) = send_welcome_email_result {
         eprintln!("Failed to send welcome email: {}", e);
     }
+
+     let token = token::create_token(
+        
+    ).map_err(|e| HttpError::server_error(e.to_string()))?;
 }
