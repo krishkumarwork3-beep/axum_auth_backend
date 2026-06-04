@@ -211,4 +211,7 @@ pub async fn forgot_password(
         message: "Password reset link has been sent to your email.".to_string(),
         status: "success",
     };
+
+    Ok(Json(response))
+    
 }
