@@ -31,4 +31,15 @@ pub async fn register(
     let result = app_state.db_client
         .save_user(&body.name, &body.email, &hash_password, &verification_token, expires_at)
         .await;
+    match result {
+        Ok(_user) => {
+            let send_email_result = send_verification_email(&body.email, &body.name, &verification_token).await;
+
+            if let Err(e) = send_email_result {
+                eprintln!("Failed to send verification email: {}", e);
+            }
+
+            
+        },
+        
 }
