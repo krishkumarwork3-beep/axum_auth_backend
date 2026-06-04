@@ -27,4 +27,9 @@ pub async fn send_email(
         .from(smtp_username.parse()?)
         .to(to_email.parse()?)
         .subject(subject)
+        .header(header::ContentType::TEXT_HTML)
+        .singlepart(SinglePart::builder()
+            .header(header::ContentType::TEXT_HTML)
+            .body(html_template)
+        )?;
 }
