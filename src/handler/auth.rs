@@ -218,6 +218,7 @@ pub async fn forgot_password(
 
 pub async fn reset_password(
     Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<ResetPasswordRequestDto>
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
