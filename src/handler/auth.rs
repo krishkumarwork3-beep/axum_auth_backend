@@ -164,4 +164,6 @@ pub async fn verify_email(
     );
 
     let frontend_url = format!("http://localhost:5173/settings");
+
+    let redirect = Redirect::to(&frontend_url);
 }
