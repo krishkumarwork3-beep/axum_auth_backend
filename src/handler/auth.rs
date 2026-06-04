@@ -38,7 +38,10 @@ pub async fn register(
             if let Err(e) = send_email_result {
                 eprintln!("Failed to send verification email: {}", e);
             }
-
+            Ok((StatusCode::CREATED, Json(Response {
+                status: "success",
+                message: "Registration successful! Please check your email to verify your account.".to_string()
+            })))
             
         },
         
