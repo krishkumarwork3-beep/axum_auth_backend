@@ -122,4 +122,7 @@ pub async fn verify_email(
         .get_user(None, None, None, Some(&query_params.token))
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let user = result.ok_or(HttpError::unauthorized(ErrorMessage::InvalidToken.to_string()))?;
+
 }
