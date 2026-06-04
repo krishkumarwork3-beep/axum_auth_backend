@@ -154,4 +154,5 @@ pub async fn verify_email(
         .path("/")
         .max_age(cookie_duration)
         .http_only(true)
+        .build();
 }
