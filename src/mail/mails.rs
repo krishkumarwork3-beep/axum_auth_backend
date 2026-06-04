@@ -5,5 +5,5 @@ pub async fn send_verification_email(
     token: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
     let subject = "Email Verification";
-    
+    let template_path = "src/mail/templates/Verification-email.html";
 }
