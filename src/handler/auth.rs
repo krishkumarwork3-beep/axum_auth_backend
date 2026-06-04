@@ -153,4 +153,5 @@ pub async fn verify_email(
     let cookie = Cookie::build(("token", token.clone()))
         .path("/")
         .max_age(cookie_duration)
+        .http_only(true)
 }
