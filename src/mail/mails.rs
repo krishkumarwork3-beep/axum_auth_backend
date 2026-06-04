@@ -40,4 +40,8 @@ pub async fn send_forgot_password_email(
 ) -> Result<(), Box<dyn std::error::Error>> {
     let subject = "Rest your Password";
     let template_path = "src/mail/templates/RestPassword-email.html";
+    let placeholders = vec![
+        ("{{username}}".to_string(), username.to_string()),
+        ("{{rest_link}}".to_string(), rest_link.to_string())
+    ];
 }
