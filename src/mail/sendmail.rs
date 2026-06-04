@@ -5,3 +5,12 @@ use lettre::{
     Message, SmtpTransport,
     Transport,
 };
+
+pub async fn send_email(
+    to_email: &str,
+    subject: &str,
+    template_path: &str,
+    placeholders: &[(String, String)]
+) -> Result<(), Box<dyn std::error::Error>> {
+     
+}
