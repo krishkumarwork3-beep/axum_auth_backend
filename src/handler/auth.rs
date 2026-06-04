@@ -162,4 +162,6 @@ pub async fn verify_email(
         header::SET_COOKIE,
         cookie.to_string().parse().unwrap() 
     );
+
+    let frontend_url = format!("http://localhost:5173/settings");
 }
