@@ -13,4 +13,5 @@ pub async fn send_email(
     placeholders: &[(String, String)]
 ) -> Result<(), Box<dyn std::error::Error>> {
     let smtp_username = env::var("SMTP_USERNAME")?;
+    let smtp_password = env::var("SMTP_PASSWORD")?;
 }
