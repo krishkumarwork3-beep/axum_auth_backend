@@ -196,4 +196,6 @@ pub async fn forgot_password(
     app_state.db_client
         .add_verifed_token(user_id, &verification_token, expires_at)
         .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
