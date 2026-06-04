@@ -4,5 +4,6 @@ pub async fn send_verification_email(
     username: &str,
     token: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
+    let subject = "Email Verification";
     
 }
