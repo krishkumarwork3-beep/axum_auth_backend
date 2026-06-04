@@ -44,5 +44,16 @@ pub async fn register(
             })))
             
         },
+        Err(sqlx::Error::Database(db_err)) => {
+            if db_err.is_unique_violation() {
+                Err(HttpError::unique_constraint_violation(
+                    ErrorMessage::EmailExist.to_string(),
+                ))
+            } else {
+                Err(HttpError::server_error(db_err.to_string()))
+            }
+        }
+        Err(e) => Err(HttpError::server_error(e.to_string()))
+    }
         
 }
