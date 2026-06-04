@@ -19,3 +19,10 @@ pub async fn send_verification_email(
 fn create_verification_link(base_url: &str, token: &str) -> String {
     format!("{}?token={}", base_url, token)
 }
+
+pub async fn send_welcome_email(
+    to_email: &str,
+    username: &str
+) -> Result<(), Box<dyn std::error::Error>> {
+    
+}
