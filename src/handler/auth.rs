@@ -222,4 +222,7 @@ pub async fn reset_password(
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
+
+    let result = app_state.db_client
+        .get_user(None, None, None, Some(&body.token))
 }
