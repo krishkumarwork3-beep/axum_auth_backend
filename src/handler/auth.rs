@@ -110,3 +110,9 @@ pub async fn login(
     }
 
 }
+
+pub async fn verify_email(
+
+) -> Result<impl IntoResponse, HttpError> {
+
+}
