@@ -33,4 +33,8 @@ pub async fn send_email(
             .body(html_template)
         )?;
     let creds = Credentials::new(smtp_username.clone(), smtp_password.clone());
+    let mailer = SmtpTransport::starttls_relay(&smtp_server)?
+        .credentials(creds)
+        .port(smtp_port)
+        .build();
 }
