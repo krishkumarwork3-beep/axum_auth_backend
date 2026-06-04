@@ -168,4 +168,6 @@ pub async fn verify_email(
     let redirect = Redirect::to(&frontend_url);
 
     let mut response = redirect.into_response();
+
+    response.headers_mut().extend(headers);
 }
