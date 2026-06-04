@@ -135,4 +135,6 @@ pub async fn verify_email(
 
     app_state.db_client.verifed_token(&query_params.token).await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let send_welcome_email_result = send_welcome_email(&user.email, &user.name).await;
 }
