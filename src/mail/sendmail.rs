@@ -22,4 +22,9 @@ pub async fn send_email(
     for (key, value) in placeholders {
         html_template = html_template.replace(key, value)
     }
+
+    let email = Message::builder()
+        .from(smtp_username.parse()?)
+        .to(to_email.parse()?)
+        .subject(subject)
 }
