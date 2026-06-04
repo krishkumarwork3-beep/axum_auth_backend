@@ -102,5 +102,7 @@ pub async fn login(
             cookie.to_string().parse().unwrap(), 
         );
     let mut response = response.into_response();
+    response.headers_mut().extend(headers);
+
 
 }
