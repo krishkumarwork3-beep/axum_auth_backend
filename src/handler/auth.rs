@@ -28,4 +28,7 @@ pub async fn register(
     let hash_password = password::hash(&body.password)
             .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let result = app_state.db_client
+        .save_user(&body.name, &body.email, &hash_password, &verification_token, expires_at)
+        .await;
 }
