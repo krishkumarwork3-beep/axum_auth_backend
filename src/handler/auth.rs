@@ -117,4 +117,7 @@ pub async fn verify_email(
 ) -> Result<impl IntoResponse, HttpError> {
      query_params.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
+
+    let result = app_state.db_client
+        .get_user(None, None, None, Some(&query_params.token))
 }
