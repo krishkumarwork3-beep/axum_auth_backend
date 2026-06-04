@@ -143,6 +143,6 @@ pub async fn verify_email(
     }
 
      let token = token::create_token(
-        
+        &user.id.to_string(), 
     ).map_err(|e| HttpError::server_error(e.to_string()))?;
 }
