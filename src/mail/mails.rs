@@ -12,4 +12,6 @@ pub async fn send_verification_email(
         ("{{username}}".to_string(), username.to_string()),
         ("{{verification_link}}".to_string(), verification_link)
     ];
+
+    send_email(to_email, subject, template_path, &placeholders).await
 }
