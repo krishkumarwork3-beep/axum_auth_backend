@@ -38,5 +38,5 @@ pub async fn send_forgot_password_email(
     rest_link: &str,
     username: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
-    
+    let subject = "Rest your Password";
 }
