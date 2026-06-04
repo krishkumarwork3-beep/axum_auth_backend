@@ -25,5 +25,5 @@ pub async fn send_welcome_email(
     username: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
     let subject = "Welcome to Application";
-
+    let template_path = "src/mail/templates/Welcome-email.html";
 }
