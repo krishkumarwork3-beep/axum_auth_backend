@@ -207,4 +207,8 @@ pub async fn forgot_password(
         return Err(HttpError::server_error("Failed to send email".to_string()));
     }
 
+    let response = Response {
+        message: "Password reset link has been sent to your email.".to_string(),
+        status: "success",
+    };
 }
