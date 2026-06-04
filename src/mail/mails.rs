@@ -29,4 +29,6 @@ pub async fn send_welcome_email(
     let placeholders = vec![
         ("{{username}}".to_string(), username.to_string())
     ];
+
+    send_email(to_email, subject, template_path, &placeholders).await
 }
