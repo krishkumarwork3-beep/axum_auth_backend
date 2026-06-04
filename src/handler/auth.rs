@@ -186,4 +186,5 @@ pub async fn forgot_password(
             .await
             .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let user = result.ok_or(HttpError::bad_request("Email not found!".to_string()))?;
 }
