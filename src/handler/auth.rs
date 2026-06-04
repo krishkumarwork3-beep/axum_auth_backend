@@ -225,4 +225,5 @@ pub async fn reset_password(
 
     let result = app_state.db_client
         .get_user(None, None, None, Some(&body.token))
+        .await
 }
