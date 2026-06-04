@@ -32,3 +32,11 @@ pub async fn send_welcome_email(
 
     send_email(to_email, subject, template_path, &placeholders).await
 }
+
+pub async fn send_forgot_password_email(
+    to_email: &str,
+    rest_link: &str,
+    username: &str
+) -> Result<(), Box<dyn std::error::Error>> {
+    
+}
