@@ -6,4 +6,5 @@ pub async fn send_verification_email(
 ) -> Result<(), Box<dyn std::error::Error>> {
     let subject = "Email Verification";
     let template_path = "src/mail/templates/Verification-email.html";
+    let base_url = "http://localhost:8000/api/auth/verify";
 }
