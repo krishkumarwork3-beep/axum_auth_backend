@@ -191,4 +191,5 @@ pub async fn forgot_password(
     let verification_token = uuid::Uuid::new_v4().to_string();
     let expires_at = Utc::now() + Duration::minutes(30);
 
+    let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
 }
