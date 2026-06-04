@@ -13,4 +13,5 @@ pub fn auth_handler() -> Router {
         .route("/login", post(login))
         .route("/verify", get(verify_email))
         .route("/forgot-password", post(forgot_password))
+        .route("/reset-password", post(reset_password))
 }
