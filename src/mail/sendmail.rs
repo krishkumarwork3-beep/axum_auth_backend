@@ -38,4 +38,8 @@ pub async fn send_email(
         .port(smtp_port)
         .build();
     let result = mailer.send(&email);
+
+    match result {
+        Ok(_) => println!("Email sent successfully!"),
+    }
 }
