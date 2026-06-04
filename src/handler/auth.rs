@@ -173,3 +173,10 @@ pub async fn verify_email(
 
     Ok(response)
 }
+
+pub async fn forgot_password(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<ForgotPasswordRequestDto>
+) -> Result<impl IntoResponse, HttpError> {
+
+}
