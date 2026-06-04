@@ -57,3 +57,10 @@ pub async fn register(
     }
         
 }
+
+pub async fn login(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<LoginUserDto>
+) -> Result<impl IntoResponse, HttpError> {
+
+}
