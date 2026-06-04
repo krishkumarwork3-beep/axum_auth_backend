@@ -26,4 +26,7 @@ pub async fn send_welcome_email(
 ) -> Result<(), Box<dyn std::error::Error>> {
     let subject = "Welcome to Application";
     let template_path = "src/mail/templates/Welcome-email.html";
+    let placeholders = vec![
+        ("{{username}}".to_string(), username.to_string())
+    ];
 }
