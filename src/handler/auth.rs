@@ -201,4 +201,10 @@ pub async fn forgot_password(
     let reset_link = format!("http://localhost:5173/reset-password?token={}", &verification_token);
 
     let email_sent = send_forgot_password_email(&user.email, &reset_link, &user.name).await;
+
+    if let Err(e) = email_sent {
+        eprintln!("Failed to send forgot password email: {}", e);
+        return Err(HttpError::server_error("Failed to send email".to_string()));
+    }
+
 }
