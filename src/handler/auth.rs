@@ -192,4 +192,8 @@ pub async fn forgot_password(
     let expires_at = Utc::now() + Duration::minutes(30);
 
     let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
+
+    app_state.db_client
+        .add_verifed_token(user_id, &verification_token, expires_at)
+        .await
 }
