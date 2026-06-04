@@ -75,5 +75,11 @@ pub async fn login(
     let password_matched = password::compare(&body.password, &user.password)
         .map_err(|_| HttpError::bad_request(ErrorMessage::WrongCredentials.to_string()))?;
 
-    
+    if password_matched {
+        let token = token::create_token(
+            &user.id.to_string(), 
+            &app_state.env.jwt_secret.as_bytes(), 
+            app_state.env.jwt_maxage
+        )
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
 }
