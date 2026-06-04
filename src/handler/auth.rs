@@ -157,4 +157,9 @@ pub async fn verify_email(
         .build();
 
     let mut headers = HeaderMap::new();
+
+     headers.append(
+        header::SET_COOKIE,
+        cookie.to_string().parse().unwrap() 
+    );
 }
