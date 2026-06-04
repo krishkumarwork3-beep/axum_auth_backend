@@ -19,4 +19,7 @@ pub async fn send_email(
 
     let mut html_template = fs::read_to_string(template_path)?;
 
+    for (key, value) in placeholders {
+        html_template = html_template.replace(key, value)
+    }
 }
