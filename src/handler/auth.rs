@@ -240,4 +240,5 @@ pub async fn reset_password(
 
     let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
 
+    let hash_password = password::hash(&body.new_password)
 }
