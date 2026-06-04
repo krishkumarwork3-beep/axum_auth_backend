@@ -41,5 +41,6 @@ pub async fn send_email(
 
     match result {
         Ok(_) => println!("Email sent successfully!"),
+        Err(e) => println!("Failed to send email: {:?}", e),
     }
 }
