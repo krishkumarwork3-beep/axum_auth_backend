@@ -6,6 +6,7 @@ mod error;
 mod db;
 mod utils;
 mod middleware;
+mod mail;
 use std::sync::Arc;
 
 use axum::{http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method}, Extension, Router};
