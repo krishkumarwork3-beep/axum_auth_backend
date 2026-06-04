@@ -151,5 +151,5 @@ pub async fn verify_email(
     let cookie_duration = time::Duration::minutes(app_state.env.jwt_maxage * 60);
 
     let cookie = Cookie::build(("token", token.clone()))
-    
+        .path("/")
 }
