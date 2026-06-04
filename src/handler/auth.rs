@@ -10,4 +10,5 @@ use crate::{db::UserExt, dtos::{ForgotPasswordRequestDto, LoginUserDto, Register
 pub fn auth_handler() -> Router {
     Router::new()
         .route("/register", post(register))
+        .route("/login", post(login))
 }
