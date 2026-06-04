@@ -113,7 +113,7 @@ pub async fn login(
 
 pub async fn verify_email(
     Query(query_params): Query<VerifyEmailQueryDto>,
-    
+    Extension(app_state): Extension<Arc<AppState>>
 ) -> Result<impl IntoResponse, HttpError> {
 
 }
