@@ -15,3 +15,7 @@ pub async fn send_verification_email(
 
     send_email(to_email, subject, template_path, &placeholders).await
 }
+
+fn create_verification_link(base_url: &str, token: &str) -> String {
+    
+}
