@@ -137,4 +137,8 @@ pub async fn verify_email(
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
     let send_welcome_email_result = send_welcome_email(&user.email, &user.name).await;
+     
+    if let Err(e) = send_welcome_email_result {
+        eprintln!("Failed to send welcome email: {}", e);
+    }
 }
