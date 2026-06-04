@@ -229,4 +229,8 @@ pub async fn reset_password(
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
     let user = result.ok_or(HttpError::bad_request("Invalid or expired token".to_string()))?;
+
+    if let Some(expires_at) = user.token_expires_at {
+        
+    }
 }
