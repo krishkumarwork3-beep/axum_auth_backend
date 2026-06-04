@@ -132,4 +132,6 @@ pub async fn verify_email(
     } else {
         return Err(HttpError::bad_request("Invalid verification token".to_string()))?;
     }
+
+    app_state.db_client.verifed_token(&query_params.token).await
 }
