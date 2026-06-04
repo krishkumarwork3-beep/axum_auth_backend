@@ -217,7 +217,7 @@ pub async fn forgot_password(
 }
 
 pub async fn reset_password(
-    
+    Extension(app_state): Extension<Arc<AppState>>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
