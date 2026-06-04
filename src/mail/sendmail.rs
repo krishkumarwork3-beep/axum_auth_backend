@@ -37,4 +37,5 @@ pub async fn send_email(
         .credentials(creds)
         .port(smtp_port)
         .build();
+    let result = mailer.send(&email);
 }
