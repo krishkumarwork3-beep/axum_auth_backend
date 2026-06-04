@@ -213,5 +213,11 @@ pub async fn forgot_password(
     };
 
     Ok(Json(response))
+
+}
+
+pub async fn reset_password(
+    
+) -> Result<impl IntoResponse, HttpError> {
     
 }
