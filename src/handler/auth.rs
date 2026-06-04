@@ -221,4 +221,5 @@ pub async fn reset_password(
     Json(body): Json<ResetPasswordRequestDto>
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
 }
