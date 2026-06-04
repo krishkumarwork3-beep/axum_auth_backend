@@ -22,5 +22,6 @@ pub async fn register(
 ) -> Result<impl IntoResponse, HttpError> {
      body.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
+    let verification_token = uuid::Uuid::new_v4().to_string();
 
 }
