@@ -23,5 +23,6 @@ pub async fn register(
      body.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
     let verification_token = uuid::Uuid::new_v4().to_string();
+    let expires_at = Utc::now() + Duration::hours(24);
 
 }
