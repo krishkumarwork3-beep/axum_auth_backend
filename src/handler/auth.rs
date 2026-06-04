@@ -189,4 +189,6 @@ pub async fn forgot_password(
     let user = result.ok_or(HttpError::bad_request("Email not found!".to_string()))?;
 
     let verification_token = uuid::Uuid::new_v4().to_string();
+    let expires_at = Utc::now() + Duration::minutes(30);
+
 }
