@@ -179,4 +179,6 @@ pub async fn forgot_password(
     Json(body): Json<ForgotPasswordRequestDto>
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
+       .map_err(|e| HttpError::bad_request(e.to_string()))?;
+
 }
