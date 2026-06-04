@@ -125,4 +125,7 @@ pub async fn verify_email(
 
     let user = result.ok_or(HttpError::unauthorized(ErrorMessage::InvalidToken.to_string()))?;
 
+    if let Some(expires_at) = user.token_expires_at {
+
+    }
 }
