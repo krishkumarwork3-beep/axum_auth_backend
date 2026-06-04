@@ -44,4 +44,6 @@ pub async fn send_forgot_password_email(
         ("{{username}}".to_string(), username.to_string()),
         ("{{rest_link}}".to_string(), rest_link.to_string())
     ];
+
+    send_email(to_email, subject, template_path, &placeholders).await
 }
