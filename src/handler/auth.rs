@@ -237,4 +237,7 @@ pub async fn reset_password(
     }else {
         return Err(HttpError::bad_request("Invalid verification token".to_string()))?;
     }
+
+    let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
+
 }
