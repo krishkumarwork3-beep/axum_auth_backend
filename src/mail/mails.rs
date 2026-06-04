@@ -24,5 +24,6 @@ pub async fn send_welcome_email(
     to_email: &str,
     username: &str
 ) -> Result<(), Box<dyn std::error::Error>> {
-    
+    let subject = "Welcome to Application";
+
 }
