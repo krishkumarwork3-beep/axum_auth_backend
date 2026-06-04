@@ -69,6 +69,7 @@ pub async fn login(
         .get_user(None, None, Some(&body.email), None)
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
-
+    
+    let user = result.ok_or(HttpError::bad_request(ErrorMessage::WrongCredentials.to_string()))?;
 
 }
