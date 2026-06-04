@@ -121,5 +121,5 @@ pub async fn verify_email(
     let result = app_state.db_client
         .get_user(None, None, None, Some(&query_params.token))
         .await
-
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
 }
