@@ -187,4 +187,6 @@ pub async fn forgot_password(
             .map_err(|e| HttpError::server_error(e.to_string()))?;
 
     let user = result.ok_or(HttpError::bad_request("Email not found!".to_string()))?;
+
+    let verification_token = uuid::Uuid::new_v4().to_string();
 }
