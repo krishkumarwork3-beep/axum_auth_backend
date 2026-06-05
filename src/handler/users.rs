@@ -78,4 +78,6 @@ pub async fn update_user_name(
     Json(body): Json<NameUpdateDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
+
 }
