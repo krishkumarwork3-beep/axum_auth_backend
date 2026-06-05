@@ -28,6 +28,7 @@ pub fn users_handler() -> Router {
 
 pub async fn get_me(
     Extension(_app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>
 ) -> Result<impl IntoResponse, HttpError> {
 
     
