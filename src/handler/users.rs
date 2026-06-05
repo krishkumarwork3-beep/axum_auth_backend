@@ -62,4 +62,9 @@ pub async fn get_users(
         .get_user_count()
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+     let response = UserListResponseDto {
+        status: "success".to_string(),
+        
+    };
 }
