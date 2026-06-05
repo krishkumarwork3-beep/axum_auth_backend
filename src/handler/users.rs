@@ -94,5 +94,6 @@ pub async fn update_user_name(
         data: UserData {
             user: filtered_user,
         },
+        status: "success".to_string(),
     };
 }
