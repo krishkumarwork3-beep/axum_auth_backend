@@ -77,5 +77,5 @@ pub async fn update_user_name(
     Extension(user): Extension<JWTAuthMiddeware>,
     Json(body): Json<NameUpdateDto>,
 ) -> Result<impl IntoResponse, HttpError> {
-    
+    body.validate()
 }
