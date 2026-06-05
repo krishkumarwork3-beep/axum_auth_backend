@@ -99,3 +99,9 @@ pub async fn update_user_name(
 
     Ok(Json(response))
 }
+
+pub async fn update_user_role(
+    
+) -> Result<impl IntoResponse, HttpError> {
+    
+}
