@@ -123,5 +123,6 @@ pub async fn update_user_role(
         data: UserData {
             user: filtered_user,
         },
+        status: "success".to_string(),
     };
 }
