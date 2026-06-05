@@ -18,7 +18,7 @@ pub fn users_handler() -> Router {
         "/users", 
         get(get_users)
         .layer(middleware::from_fn(|state, req, next| {
-            
+            role_check(state, req, next, vec![UserRole::Admin])
         }))
     )
 }
