@@ -35,5 +35,8 @@ pub async fn get_me(
     
     let response_data = UserResponseDto {
         status: "success".to_string(),
+        data: UserData {
+            user: filtered_user,
+        }
     };
 }
