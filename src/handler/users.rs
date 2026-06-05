@@ -23,4 +23,5 @@ pub fn users_handler() -> Router {
     )
     .route("/name", put(update_user_name))
     .route("/role", put(update_user_role))
+    .route("/password", put(update_user_password))
 }
