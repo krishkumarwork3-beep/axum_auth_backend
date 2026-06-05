@@ -21,4 +21,5 @@ pub fn users_handler() -> Router {
             role_check(state, req, next, vec![UserRole::Admin])
         }))
     )
+    .route("/name", put(update_user_name))
 }
