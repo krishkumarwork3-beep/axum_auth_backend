@@ -60,4 +60,5 @@ pub async fn get_users(
 
     let user_count = app_state.db_client
         .get_user_count()
+        .await
 }
