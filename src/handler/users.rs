@@ -79,5 +79,5 @@ pub async fn update_user_name(
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
-
+    let user = &user.user;
 }
