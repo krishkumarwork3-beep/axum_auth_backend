@@ -52,4 +52,7 @@ pub async fn get_users(
 
     let page = query_params.page.unwrap_or(1);
     let limit = query_params.limit.unwrap_or(10);
+
+    let users = app_state.db_client
+        .get_users(page as u32, limit)
 }
