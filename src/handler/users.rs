@@ -132,6 +132,7 @@ pub async fn update_user_role(
 pub async fn update_user_password(
     Extension(app_state): Extension<Arc<AppState>>,
     Extension(user): Extension<JWTAuthMiddeware>,
+    Json(body): Json<UserPasswordUpdateDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 
