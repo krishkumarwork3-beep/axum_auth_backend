@@ -105,5 +105,5 @@ pub async fn update_user_role(
     Extension(user): Extension<JWTAuthMiddeware>,
     Json(body): Json<RoleUpdateDto>,
 ) -> Result<impl IntoResponse, HttpError> {
-    
+    body.validate()
 }
