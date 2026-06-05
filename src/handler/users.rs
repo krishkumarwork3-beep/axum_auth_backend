@@ -154,5 +154,7 @@ pub async fn update_user_password(
     if !password_match {
         return Err(HttpError::bad_request("Old password is incorrect".to_string()));
     }
+    
+    let hash_password = password::hash(&body.new_password)
 
 }
