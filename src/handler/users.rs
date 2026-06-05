@@ -102,6 +102,7 @@ pub async fn update_user_name(
 
 pub async fn update_user_role(
     Extension(app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
