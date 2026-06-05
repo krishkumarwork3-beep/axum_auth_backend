@@ -14,4 +14,9 @@ pub fn users_handler() -> Router {
                 role_check(state, req, next, vec![UserRole::Admin, UserRole::User])
             }))
     )
+    .route(
+        "/users", 
+        get(get_users)
+        
+    )
 }
