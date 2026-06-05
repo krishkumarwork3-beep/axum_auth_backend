@@ -68,4 +68,6 @@ pub async fn get_users(
         users: FilterUserDto::filter_users(&users),
         results: user_count,
     };
+
+    Ok(Json(response))
 }
