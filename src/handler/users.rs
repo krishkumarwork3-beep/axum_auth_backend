@@ -58,4 +58,6 @@ pub async fn get_users(
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let user_count = app_state.db_client
+        .get_user_count()
 }
