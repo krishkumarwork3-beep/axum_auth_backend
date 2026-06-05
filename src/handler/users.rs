@@ -45,6 +45,7 @@ pub async fn get_me(
 
 pub async fn get_users(
     Query(query_params): Query<RequestQueryDto>,
+    Extension(app_state): Extension<Arc<AppState>>
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
