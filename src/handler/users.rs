@@ -10,6 +10,8 @@ pub fn users_handler() -> Router {
     .route(
             "/me", 
             get(get_me)
-            
+            .layer(middleware::from_fn(|state, req, next| {
+                
+            }))
     )
 }
