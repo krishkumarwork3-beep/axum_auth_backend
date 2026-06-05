@@ -17,6 +17,8 @@ pub fn users_handler() -> Router {
     .route(
         "/users", 
         get(get_users)
-        
+        .layer(middleware::from_fn(|state, req, next| {
+            
+        }))
     )
 }
