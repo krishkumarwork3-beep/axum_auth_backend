@@ -144,4 +144,6 @@ pub async fn update_user_password(
     let result = app_state.db_client
         .get_user(Some(user_id.clone()), None, None, None)
         .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
