@@ -74,6 +74,7 @@ pub async fn get_users(
 
 pub async fn update_user_name(
     Extension(app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
