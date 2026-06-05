@@ -167,4 +167,7 @@ pub async fn update_user_password(
         message: "Password updated Successfully".to_string(),
         status: "success",
     };
+
+    Ok(Json(response))
+
 }
