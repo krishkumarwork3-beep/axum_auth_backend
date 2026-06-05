@@ -31,5 +31,6 @@ pub async fn get_me(
     Extension(user): Extension<JWTAuthMiddeware>
 ) -> Result<impl IntoResponse, HttpError> {
 
+    let filtered_user = FilterUserDto::filter_user(&user.user);
     
 }
