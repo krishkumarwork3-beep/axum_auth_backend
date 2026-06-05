@@ -160,5 +160,6 @@ pub async fn update_user_password(
 
     app_state.db_client
         .update_user_password(user_id.clone(), hash_password)
+        .await
 
 }
