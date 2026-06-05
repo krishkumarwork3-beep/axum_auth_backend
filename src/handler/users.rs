@@ -56,4 +56,6 @@ pub async fn get_users(
     let users = app_state.db_client
         .get_users(page as u32, limit)
         .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
 }
