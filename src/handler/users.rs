@@ -110,4 +110,6 @@ pub async fn update_user_role(
 
     let user = &user.user;
 
+    let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
+
 }
