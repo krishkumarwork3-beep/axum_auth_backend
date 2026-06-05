@@ -151,5 +151,8 @@ pub async fn update_user_password(
     let password_match = password::compare(&body.old_password, &user.password)
          .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    if !password_match {
+        
+    }
 
 }
