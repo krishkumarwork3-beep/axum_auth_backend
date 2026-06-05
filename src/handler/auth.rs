@@ -257,4 +257,6 @@ pub async fn reset_password(
         message: "Password has been successfully reset.".to_string(),
         status: "success",
     };
+
+    Ok(Json(response))
 }
