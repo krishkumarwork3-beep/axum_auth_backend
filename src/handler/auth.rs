@@ -252,4 +252,9 @@ pub async fn reset_password(
         .verifed_token(&body.token)
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let response = Response {
+        message: "Password has been successfully reset.".to_string(),
+        status: "success",
+    };
 }
