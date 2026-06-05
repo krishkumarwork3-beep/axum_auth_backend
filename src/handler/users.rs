@@ -117,4 +117,5 @@ pub async fn update_user_role(
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let filtered_user = FilterUserDto::filter_user(&result);
 }
