@@ -251,4 +251,5 @@ pub async fn reset_password(
     app_state.db_client
         .verifed_token(&body.token)
         .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
 }
