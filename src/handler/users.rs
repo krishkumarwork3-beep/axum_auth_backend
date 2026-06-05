@@ -128,3 +128,10 @@ pub async fn update_user_role(
 
     Ok(Json(response))
 }
+
+pub async fn update_user_password(
+    
+) -> Result<impl IntoResponse, HttpError> {
+    
+
+}
