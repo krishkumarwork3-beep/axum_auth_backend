@@ -48,4 +48,5 @@ pub async fn get_users(
     Extension(app_state): Extension<Arc<AppState>>
 ) -> Result<impl IntoResponse, HttpError> {
     query_params.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
 }
