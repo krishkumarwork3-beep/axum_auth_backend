@@ -91,6 +91,8 @@ pub async fn update_user_name(
      let filtered_user = FilterUserDto::filter_user(&result);
 
      let response = UserResponseDto {
-        
+        data: UserData {
+            user: filtered_user,
+        },
     };
 }
