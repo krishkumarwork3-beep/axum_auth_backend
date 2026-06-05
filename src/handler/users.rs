@@ -34,6 +34,6 @@ pub async fn get_me(
     let filtered_user = FilterUserDto::filter_user(&user.user);
     
     let response_data = UserResponseDto {
-        
+        status: "success".to_string(),
     };
 }
