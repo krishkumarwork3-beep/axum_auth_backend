@@ -101,7 +101,7 @@ pub async fn update_user_name(
 }
 
 pub async fn update_user_role(
-    
+    Extension(app_state): Extension<Arc<AppState>>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
