@@ -125,4 +125,6 @@ pub async fn update_user_role(
         },
         status: "success".to_string(),
     };
+
+    Ok(Json(response))
 }
