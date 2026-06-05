@@ -106,4 +106,5 @@ pub async fn update_user_role(
     Json(body): Json<RoleUpdateDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
 }
