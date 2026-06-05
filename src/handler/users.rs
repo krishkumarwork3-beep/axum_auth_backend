@@ -71,3 +71,9 @@ pub async fn get_users(
 
     Ok(Json(response))
 }
+
+pub async fn update_user_name(
+    
+) -> Result<impl IntoResponse, HttpError> {
+    
+}
