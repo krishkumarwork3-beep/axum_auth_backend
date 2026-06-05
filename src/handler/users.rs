@@ -73,7 +73,7 @@ pub async fn get_users(
 }
 
 pub async fn update_user_name(
-    
+    Extension(app_state): Extension<Arc<AppState>>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
