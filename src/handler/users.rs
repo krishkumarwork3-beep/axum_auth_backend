@@ -7,4 +7,9 @@ use crate::{db::UserExt, dtos::{FilterUserDto, NameUpdateDto, RequestQueryDto, R
 
 pub fn users_handler() -> Router {
     Router::new()
+    .route(
+            "/me", 
+            get(get_me)
+            
+    )
 }
