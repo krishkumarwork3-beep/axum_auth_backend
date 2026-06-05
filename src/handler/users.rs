@@ -25,3 +25,10 @@ pub fn users_handler() -> Router {
     .route("/role", put(update_user_role))
     .route("/password", put(update_user_password))
 }
+
+pub async fn get_me(
+    
+) -> Result<impl IntoResponse, HttpError> {
+
+    
+}
