@@ -163,4 +163,8 @@ pub async fn update_user_password(
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let response = Response {
+        message: "Password updated Successfully".to_string(),
+        status: "success",
+    };
 }
