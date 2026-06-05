@@ -42,3 +42,9 @@ pub async fn get_me(
 
     Ok(Json(response_data))
 }
+
+pub async fn get_users(
+    
+) -> Result<impl IntoResponse, HttpError> {
+    
+}
