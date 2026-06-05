@@ -65,6 +65,6 @@ pub async fn get_users(
 
      let response = UserListResponseDto {
         status: "success".to_string(),
-        
+        users: FilterUserDto::filter_users(&users),
     };
 }
