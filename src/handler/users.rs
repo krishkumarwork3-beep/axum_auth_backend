@@ -96,4 +96,6 @@ pub async fn update_user_name(
         },
         status: "success".to_string(),
     };
+
+    Ok(Json(response))
 }
