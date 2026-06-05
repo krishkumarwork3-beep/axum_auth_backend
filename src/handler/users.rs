@@ -27,7 +27,7 @@ pub fn users_handler() -> Router {
 }
 
 pub async fn get_me(
-    
+    Extension(_app_state): Extension<Arc<AppState>>,
 ) -> Result<impl IntoResponse, HttpError> {
 
     
