@@ -44,7 +44,7 @@ pub async fn get_me(
 }
 
 pub async fn get_users(
-    
+    Query(query_params): Query<RequestQueryDto>,
 ) -> Result<impl IntoResponse, HttpError> {
     
 }
