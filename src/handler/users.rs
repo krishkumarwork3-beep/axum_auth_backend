@@ -146,4 +146,7 @@ pub async fn update_user_password(
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
+    let user = result.ok_or(HttpError::unauthorized(ErrorMessage::InvalidToken.to_string()))?;
+
+
 }
