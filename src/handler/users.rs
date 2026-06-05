@@ -85,5 +85,6 @@ pub async fn update_user_name(
 
     let result = app_state.db_client.
         update_user_name(user_id.clone(), &body.name)
+        .await
 
 }
