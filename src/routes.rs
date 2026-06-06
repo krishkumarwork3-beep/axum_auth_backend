@@ -11,6 +11,6 @@ pub fn create_router(app_state: Arc<AppState>) -> Router {
          .nest(
             "/users", 
             users_handler()
-                
+                .layer(middleware::from_fn(auth))
         )
 }
