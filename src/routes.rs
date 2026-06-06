@@ -14,4 +14,6 @@ pub fn create_router(app_state: Arc<AppState>) -> Router {
                 .layer(middleware::from_fn(auth))
         )
         .layer(TraceLayer::new_for_http())
+        .layer(Extension(app_state));
+
 }
