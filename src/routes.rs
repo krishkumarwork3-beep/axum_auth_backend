@@ -7,4 +7,5 @@ use crate::{handler::{auth::auth_handler, users::users_handler}, middleware::aut
 
 pub fn create_router(app_state: Arc<AppState>) -> Router {
     let api_route = Router::new()
+         .nest("/auth", auth_handler())
 }
