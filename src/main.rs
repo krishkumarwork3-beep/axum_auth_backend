@@ -18,6 +18,7 @@ use dotenv::dotenv;
 use sqlx::postgres::PgPoolOptions;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber::filter::LevelFilter;
+use routes::create_router;
 
 #[derive(Debug, Clone)]
 pub struct AppState {
