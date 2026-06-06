@@ -13,4 +13,5 @@ pub fn create_router(app_state: Arc<AppState>) -> Router {
             users_handler()
                 .layer(middleware::from_fn(auth))
         )
+        .layer(TraceLayer::new_for_http())
 }
