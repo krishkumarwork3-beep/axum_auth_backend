@@ -11,7 +11,7 @@ mod handler;
 mod routes;
 use std::sync::Arc;
 
-use axum::{http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method}, Extension, Router};
+use axum::http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method};
 use config::Config;
 use db::DBClient;
 use dotenv::dotenv;
