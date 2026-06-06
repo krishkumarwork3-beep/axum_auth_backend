@@ -5,6 +5,6 @@ use tower_http::trace::TraceLayer;
 
 use crate::{handler::{auth::auth_handler, users::users_handler}, middleware::auth, AppState};
 
-pub fn create_router() -> Router {
+pub fn create_router(app_state: Arc<AppState>) -> Router {
     
 }
