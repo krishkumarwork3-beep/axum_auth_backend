@@ -8,6 +8,7 @@ mod utils;
 mod middleware;
 mod mail;
 mod handler;
+mod routes;
 use std::sync::Arc;
 
 use axum::{http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method}, Extension, Router};
