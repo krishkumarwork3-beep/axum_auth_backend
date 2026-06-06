@@ -62,7 +62,7 @@ async fn main() {
         env: config.clone(),
         db_client,
     };
-    let app: Router=Router::new().layer(Extension(app_state)).layer(cors.clone());
+     let app = create_router(Arc::new(app_state.clone())).layer(cors.clone());
     println!(
         "{}",
         format!("🚀 Server is running on http://localhost:{}", config.port)
